@@ -1,2 +1,2 @@
 #!/bin/bash
-lchown vincent:staff _hello
+sudo lchown vincent:staff _hello
