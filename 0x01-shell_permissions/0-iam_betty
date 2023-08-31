@@ -1,2 +1,2 @@
 #!/bin/bash
-su -c echo"betty" betty
+su -c betty
