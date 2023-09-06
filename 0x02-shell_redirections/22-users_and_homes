@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $USER $HOME (-t: -k,1 /etc/passwd) 
+echo $USER $HOME (sort -t: -k,1 /etc/passwd) 
