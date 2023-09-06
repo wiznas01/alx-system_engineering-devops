@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(ls -d) $PATH 
+echo $(ls -d $PATH) $(grep -c /) 
