@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Connects to a server using SSH with a specified private key and user 'ubuntu'
+
+ssh -i ~/.ssh/school -o IdentitiesOnly=yes ubuntu@100.25.211.237
