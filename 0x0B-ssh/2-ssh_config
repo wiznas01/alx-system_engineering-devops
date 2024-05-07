@@ -3,3 +3,6 @@ Host *
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
     IdentitiesOnly yes
+    PubkeyAuthentication yes
+    AuthorizedKeysFile .ssh/authorized_keys
+
