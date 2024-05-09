@@ -1,5 +1,4 @@
 #!/bin/env bash
-
 # Define the script name
 SCRIPT_NAME="5-is_the_host_on_the_network"
 
