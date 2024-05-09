@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Use netstat command to list listening sockets for TCP and UDP with process information
+echo "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+
+# List TCP and UDP listening sockets with program names
+netstat -tulnp | awk 'NR > 2 && /tcp|udp/ {print $1, $2, $3, $4, $5, $6, $7}'
+
+echo "" # Adding a blank line for separation
+echo "Active UNIX domain sockets (only servers)"
+echo "Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path"
+
+# List UNIX domain sockets with program names
+netstat -lxp | awk 'NR > 2 && /unix/ {print $1, $2, $3, $4, $5, $6, $7, $9, $10}'
