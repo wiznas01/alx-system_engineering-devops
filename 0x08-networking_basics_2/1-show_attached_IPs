@@ -1,0 +1,11 @@
+#!/bin/env bash
+# Script to display all active IPv4 addresses on the machine
+
+# Check if 'ip' command is available
+if ! command -v ip &> /dev/null; then
+    echo "ip command not found. Please install iproute2 package."
+    exit 1
+fi
+
+# Display all IPv4 addresses
+ip -4 addr show | grep -oP 'inet \K[\d.]+' | cat -e
