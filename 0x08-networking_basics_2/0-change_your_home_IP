@@ -1,0 +1,32 @@
+#!/bin/env bash
+# Script Name: 0-change_your_home_IP.sh
+
+# Function to update /etc/hosts
+update_hosts() {
+    # Backup the original /etc/hosts file
+    cp /etc/hosts /etc/hosts.backup
+
+    # Remove existing entries (if any) to avoid duplicates
+    sed -i '/localhost/d' /etc/hosts
+    sed -i '/facebook.com/d' /etc/hosts
+
+    # Add new entries
+    echo "127.0.0.2 localhost" >> /etc/hosts
+    echo "8.8.8.8 facebook.com" >> /etc/hosts
+}
+
+# Ping function for testing
+ping_test() {
+    echo "Pinging localhost..."
+    ping -c 1 localhost
+    echo "Pinging facebook.com..."
+    ping -c 1 facebook.com
+}
+
+# Main function
+main() {
+    echo "Updating IP configurations for localhost and facebook.com..."
+    update_hosts
+    echo "Configuration updated. You may now ping to see changes."
+}
+main
